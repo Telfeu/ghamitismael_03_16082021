@@ -1,0 +1,51 @@
+@use "sass:color";
+
+$gradient: linear-gradient(0deg, rgba(147,86,220,1) 0%, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+$button--bg:rgb(147,86,220);
+$bgcolor1:#fff;
+$bgcolor2:#f6f6f6;
+$bgcolor3:#353535;
+$bgcolor-geolocal:#eaeaea;
+$bgcolor-button:#f5edff;
+$bgcolor-validate:#99e2d0;
+$fontcolor--new:#008766;
+
+
+@mixin bg-color($colour:$bgcolor1){
+    background-color: $colour;
+}
+
+@mixin flex-row{
+    display:flex;
+    flex-direction: row;
+}
+
+@mixin flex-column{
+    display:flex;
+    flex-direction: column;
+}
+
+@mixin centering{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+@mixin button{
+    border: 0;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 100px;
+    color: white;
+    background-color: rgb(100,100,100);
+    background: linear-gradient(0deg, rgba(147,86,220,0.9) 0%, rgba(255,121,218,0.9) 100%);
+    cursor: pointer;
+    transition-duration: 0.25s;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    background-color: white;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.50);
+  }
+}

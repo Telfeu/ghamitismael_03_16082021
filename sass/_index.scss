@@ -1,0 +1,23 @@
+@use 'values' as *;
+
+.geolocal{
+    @include flex-row;
+    height:50px;
+    @include bg-color($bgcolor-geolocal);
+    @include centering;
+
+    &__icon{
+        margin-right:10px;
+    }
+
+}
+
+.heading{
+    @include flex-column;
+    @include bg-color($bgcolor2);
+    @include centering;
+    box-sizing: border-box;
+    width:100%;
+    padding:0 10% 5% 10%;
+
+}

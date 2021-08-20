@@ -1,6 +1,78 @@
-body {
-  background-color: red;
-  color: blue;
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
-/*# sourceMappingURL=style.css.map */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header, .footer, .main {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #fff;
+  height: 70px;
+}
+.header__logo {
+  height: 40px;
+  width: 180px;
+  background: url(../img/logo/ohmyfood@2x.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.btn {
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 100px;
+  color: white;
+  background-color: #646464;
+  background: linear-gradient(0deg, rgba(147, 86, 220, 0.9) 0%, rgba(255, 121, 218, 0.9) 100%);
+  cursor: pointer;
+  transition-duration: 0.25s;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+.btn:hover {
+  background-color: white;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+}
+
+.footer, .how-to, .restaurants {
+  display: none;
+}
+
+.geolocal {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  background-color: #eaeaea;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.geolocal__icon {
+  margin-right: 10px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 10% 5% 10%;
+}

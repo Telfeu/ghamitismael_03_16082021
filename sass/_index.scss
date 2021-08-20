@@ -21,3 +21,72 @@
     padding:0 10% 5% 10%;
 
 }
+
+.how-to{
+    padding:0 5%;
+
+    &__steps{
+    @include flex-column;
+    list-style: none;
+    counter-reset:steps-style;
+
+    }
+
+    &__steps{
+        margin-left:0;
+    }
+
+    &__step{
+        @include flex-row;
+        align-items: center;
+        counter-increment: steps-style;
+        height:80px;
+        width:325px;
+        border-radius: 25px;
+        background-color: $bgcolor2;
+        box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+        margin-bottom:25px;
+
+    }
+
+    &__step::before{
+        content:counter(steps-style);
+        display:inline-block;
+        background:$bgcolor4;
+        @include centering;
+        color:white;
+        width:2rem;
+        height:2rem;
+        border-radius:2rem;
+        text-align:center;
+        line-height:2rem;
+        margin-right:5%;
+    }
+
+    &__step:last-child{
+        background-color: $bgcolor5;
+
+        & .how-to__icon{
+            color:$bgcolor4;
+        }
+    }
+
+
+    &__icon{
+        @extend %steps-text;
+        color:$fontcolor--icon1;
+    }
+
+
+    &__text{
+        @extend %steps-text;
+        width:80%;
+    }
+
+}
+
+%steps-text{
+    margin-right:5%;
+    font-size: 1.2rem;
+    font-weight: 500;
+}

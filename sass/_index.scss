@@ -21,3 +21,122 @@
     padding:0 10% 5% 10%;
 
 }
+
+.how-to{
+    padding:0 5%;
+
+    &__steps{
+    @include flex-column;
+    list-style: none;
+    counter-reset:steps-style;
+
+    }
+
+    &__steps{
+        margin-left:0;
+    }
+
+    &__step{
+        @include flex-row;
+        align-items: center;
+        counter-increment: steps-style;
+        height:80px;
+        width:325px;
+        border-radius: 25px;
+        background-color: $bgcolor2;
+        box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+        margin-bottom:25px;
+
+    }
+
+    &__step::before{
+        content:counter(steps-style);
+        display:inline-block;
+        background:$bgcolor4;
+        @include centering;
+        color:white;
+        width:2rem;
+        height:2rem;
+        border-radius:2rem;
+        text-align:center;
+        line-height:2rem;
+        margin-right:5%;
+    }
+
+    &__step:last-child{
+        background-color: $bgcolor5;
+
+        & .how-to__icon{
+            color:$bgcolor4;
+        }
+    }
+
+
+    &__icon{
+        @extend %steps-text;
+        color:$fontcolor--icon1;
+    }
+
+
+    &__text{
+        @extend %steps-text;
+        width:80%;
+    }
+
+}
+
+%steps-text{
+    margin-right:5%;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.restaurants{
+    width:100%;
+    padding:5% 5%;
+    background-color:$bgcolor2;
+    box-sizing: border-box;
+}
+
+.thumbnails{
+    width:100%;
+    box-sizing: border-box;
+    @include grid;
+}
+
+.thumbnail{
+    @include flex-column;
+    box-sizing: border-box;
+    width:100%;
+    height:100%;
+    background-color:$bgcolor1;
+    margin-bottom:200px;
+    border-radius: 20px;
+    overflow: hidden;
+    
+
+    & *{
+        margin:0;
+    }
+
+    &__img{
+        height:175px;
+        object-fit: cover;
+    }
+
+    &__footer{
+        @include flex-row;
+        padding:20px 15px;
+    }
+
+    &__content{
+        width:90%;
+    }
+
+    &__new{
+        display:none;
+    }
+
+
+    
+}

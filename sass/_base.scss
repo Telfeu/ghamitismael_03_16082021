@@ -38,7 +38,34 @@ a{
     @include button;
 }
 
-.footer, .how-to, .restaurants{
-    display:none;
+.footer{
+    background-color: $bgcolor3;
+    color:$bgcolor1;
+    box-sizing: border-box;
+    padding:5% 5%;
+    .container{
+    @include flex-column;
+    }
+    
+
+    &__logo{
+        font-family: Shrikhand;
+        font-size:1.5rem;
+    }
+    &__list{
+        list-style: none;
+        padding:0;
+        margin:0;
+        
+        &-item{
+            line-height: 2rem;
+            
+        }
+    }
+
+    &__icon{
+        width: 2rem;
+        margin-right: 0.5rem;
+    }
   }
 

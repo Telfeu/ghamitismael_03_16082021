@@ -52,7 +52,7 @@ a {
   background-color: #353535;
   color: #fff;
   box-sizing: border-box;
-  padding: 5% 5%;
+  padding: 50px 50px;
 }
 .footer .container {
   display: flex;

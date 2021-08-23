@@ -11,23 +11,20 @@ a {
 
 .header, .footer, .main {
   width: 100%;
+  box-sizing: border-box;
 }
 
 .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
   background-color: #fff;
   height: 70px;
+  text-align: center;
+  padding-top: 2%;
 }
 .header__logo {
+  font-family: Shrikhand;
   height: 40px;
   width: 180px;
-  background: url(../img/logo/ohmyfood@2x.svg);
-  background-size: 100%;
-  background-repeat: no-repeat;
+  font-size: 2rem;
 }
 
 .btn {
@@ -35,6 +32,7 @@ a {
   padding: 0.75rem 1.5rem;
   font-weight: bold;
   font-size: 1.1rem;
+  text-align: center;
   border-radius: 100px;
   color: white;
   background-color: #646464;
@@ -202,4 +200,143 @@ a {
 }
 .thumbnail__new {
   display: none;
+}
+
+.header--back {
+  position: relative;
+}
+.header__backbtn {
+  position: absolute;
+  left: 2rem;
+  top: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.restaurant__header {
+  width: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.menu {
+  background-color: #f6f6f6;
+  z-index: 1;
+  position: relative;
+  margin-top: -50px;
+  padding: 10px 5%;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+.menu__header {
+  font-family: Shrikhand;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.menu__title {
+  width: 90%;
+  letter-spacing: 0.1rem;
+}
+.menu-sections {
+  display: flex;
+  flex-direction: column;
+}
+.menu-section {
+  display: flex;
+  flex-direction: column;
+}
+.menu-section__title {
+  font-weight: lighter;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 2%;
+}
+.menu-section__title:before {
+  content: "";
+  width: 3rem;
+  height: 0.25rem;
+  background-color: #99e2d0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 75px;
+  background-color: #fff;
+  margin-bottom: 5%;
+  border-radius: 20px;
+  padding: 0 0 0 5%;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+.menu-item__description {
+  width: 65%;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+.menu-item p, .menu-item h4 {
+  margin: 0;
+  height: 50%;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  resize: none;
+}
+.menu-item__price {
+  width: 10%;
+}
+.menu-item__confirm {
+  display: flex;
+  width: 20%;
+  height: 100%;
+  background-color: #99e2d0;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.menu-item__checkmark {
+  background-color: #fff;
+  font-size: 1.5em;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin: 0 auto;
+  align-items: center;
+}
+.menu-item__icon {
+  color: #99e2d0;
+}
+
+.command {
+  width: 100%;
+  height: auto;
+  margin: 10% 0;
+}
+.command__btn {
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  border-radius: 100px;
+  color: white;
+  background-color: #646464;
+  background: linear-gradient(0deg, rgba(147, 86, 220, 0.9) 0%, rgba(255, 121, 218, 0.9) 100%);
+  cursor: pointer;
+  transition-duration: 0.25s;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}
+.command__btn:hover {
+  background-color: white;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
 }

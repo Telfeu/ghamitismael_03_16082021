@@ -15,22 +15,23 @@ a{
 
 .header, .footer, .main{
     width:100%;
+    box-sizing: border-box;
 }
 
 .header{
-    @include flex-row;
-    @include centering;
     @include bg-color;
     height:70px;
-
+    text-align: center;
+    padding-top: 2%;
     
 
     &__logo{
+        font-family: Shrikhand;
         height:40px;
         width:180px;
-        background:url(../img/logo/ohmyfood@2x.svg);
-        background-size: 100%;
-        background-repeat: no-repeat;
+        font-size:2rem;
+        
+        
     }
 }
 

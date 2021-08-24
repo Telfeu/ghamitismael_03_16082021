@@ -25,8 +25,10 @@
 .how-to{
     padding:0 5%;
 
+
     &__steps{
     @include flex-column;
+    align-items: center;
     list-style: none;
     counter-reset:steps-style;
 
@@ -34,6 +36,7 @@
 
     &__steps{
         margin-left:0;
+        padding:0 5%;
     }
 
     &__step{
@@ -85,6 +88,33 @@
 
 }
 
+@media (min-width: 1100px) {
+
+    .how-to{
+        padding:0;
+        width:1100px;
+        margin:0 auto;
+    
+        &__steps{
+        @include flex-row;
+        justify-content: space-evenly;
+        padding:0;
+        }
+    
+        &__steps{
+            margin-left:0;
+        }
+    
+        &__step{
+           
+            height:80px;
+            width:325px;
+        }
+    
+    }
+
+}
+
 %steps-text{
     margin-right:5%;
     font-size: 1.2rem;
@@ -96,12 +126,31 @@
     padding:5% 5%;
     background-color:$bgcolor2;
     box-sizing: border-box;
+
+    
 }
 
 .thumbnails{
     width:100%;
     box-sizing: border-box;
-    @include grid;
+    @include grid(1, 100%, 4, 255px, 20px, 0);
+}
+
+@media (min-width: 1200px) {
+    .restaurants {
+        padding:50px 0;
+    & .container{
+        width: 1100px;
+        padding:0 50px;
+        margin:0 auto;
+    }
+}
+
+    .thumbnails{
+    @include grid(2, 45%, 2, 255px, 50px, 5%);
+    
+    
+    }
 }
 
 .thumbnail{

@@ -55,9 +55,10 @@ $fontcolor--icon1:#7e7e7e;
 }
 
 
-@mixin grid{
+@mixin grid($number-column, $width-column, $number-row, $width-row, $row-gap, $column-gap){
     display:grid;
-    grid-template-columns:repeat(1, 100%);
-    grid-template-rows: repeat(4, 255px);
-    row-gap:20px;
+    grid-template-columns:repeat($number-column, $width-column);
+    grid-template-rows: repeat($number-row, $width-row);
+    row-gap:$row-gap;
+    column-gap:$column-gap;
 }

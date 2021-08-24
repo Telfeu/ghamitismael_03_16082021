@@ -45,7 +45,7 @@ a{
     background-color: $bgcolor3;
     color:$bgcolor1;
     box-sizing: border-box;
-    padding:50px 50px;
+    padding:30px 30px;
     .container{
     @include flex-column;
     }

@@ -18,6 +18,7 @@
     width:100%;
     object-fit: cover;
     z-index:1;
+    max-height:330px;
 }
 
 .menu{
@@ -28,7 +29,6 @@
     padding:10px 5%;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-
 
     &__header{
         font-family:Shrikhand;
@@ -73,7 +73,7 @@
         width:100%;
         height:75px;
         background-color:$bgcolor1 ;
-        margin-bottom:5%;
+        margin-bottom:20px;
         border-radius: 20px;
         padding:0 0 0 5%;
         box-sizing: border-box;
@@ -102,7 +102,7 @@
         }
         &__confirm{
             display:flex;
-            width:20%;
+            width:22%;
             height:100%;
             background-color:$bgcolor-validate;
             @include centering;
@@ -124,15 +124,33 @@
     }
 }
 
+
+@media (min-width: 1200px) {
+    .menu{
+        width:1200px;
+        margin:-50px auto 0 auto;
+        padding:20px 50px;
+
+        &-sections{
+            @include flex-row;
+            justify-content: space-between;
+        }
+
+        &-section{
+            width:30%;
+        }
+    }
+}
+
 .command{
     width:100%;
     height:auto;
-    margin:10% 0;
+    margin:35px 0;
 
     &__btn{
         @include button;
         display:block;
-        width:50%;
+        width:240px;
         margin:0 auto;
         
     }

@@ -154,6 +154,7 @@
         width:1200px;
         margin:-3rem auto 0 auto;
         padding:1rem;
+        box-sizing: border-box;
 
         &-sections{
             @include flex-row;

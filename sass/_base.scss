@@ -73,3 +73,12 @@ a{
     }
   }
 
+  @media (min-width: 1200px) {
+    .footer .container{
+        width:1200px;
+        box-sizing: border-box;
+        margin:0 auto;
+        padding:0rem 2rem;
+    }
+}
+

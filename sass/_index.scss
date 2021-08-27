@@ -18,12 +18,12 @@
     @include centering;
     box-sizing: border-box;
     width:100%;
-    padding:0 10% 5% 10%;
+    padding-bottom:2rem;
 
 }
 
 .how-to{
-    padding:0 5%;
+    padding:0 2rem;
 
 
     &__steps{
@@ -36,7 +36,7 @@
 
     &__steps{
         margin-left:0;
-        padding:0 5%;
+        padding:0 2rem;
     }
 
     &__step{
@@ -59,12 +59,12 @@
         background:$bgcolor4;
         @include centering;
         color:white;
-        width:2rem;
+        width:2.2rem;
         height:2rem;
-        border-radius:2rem;
-        text-align:center;
+        border-radius:50%;
         line-height:2rem;
-        margin-right:5%;
+        margin-right:1.5rem;
+        margin-left:-1rem;
     }
 
     &__step:last-child{
@@ -89,12 +89,13 @@
 
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1250px) {
 
     .how-to{
-        padding:0;
-        width:1100px;
+        padding:0rem;
+        width:1200px;
         margin:0 auto;
+        box-sizing: border-box;
     
         &__steps{
         @include flex-row;
@@ -116,6 +117,17 @@
 
 }
 
+@media (min-width: 1100px) {
+    .how-to{
+    
+        &__steps{
+        @include flex-row;
+        justify-content: space-evenly;
+        padding:0;
+        }
+    }
+}
+
 %steps-text{
     margin-right:5%;
     font-size: 1.2rem;
@@ -124,7 +136,7 @@
 
 .restaurants{
     width:100%;
-    padding:5% 5%;
+    padding:2rem;
     background-color:$bgcolor2;
     box-sizing: border-box;
 }
@@ -135,18 +147,20 @@
     @include grid(1, 100%, 4, 255px, 20px, 0);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1250px) {
     .restaurants {
-        padding:50px 0;
+        padding:1rem 0;
+        
     & .container{
-        width: 1100px;
-        padding:0 50px;
+        width: 1200px;
+        box-sizing: border-box;
+        padding:0;
         margin:0 auto;
     }
 }
 
     .thumbnails{
-    @include grid(2, 45%, 2, 255px, 50px, 5%);
+    @include grid(2, 47.5%, 2, 255px, 50px, 5%);
     }
 }
 

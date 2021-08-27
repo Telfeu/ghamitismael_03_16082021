@@ -67,7 +67,8 @@ a{
     }
 
     &__icon{
-        width: 2rem;
+        display:inline-flex;
+        width:1rem;
         margin-right: 0.5rem;
     }
   }

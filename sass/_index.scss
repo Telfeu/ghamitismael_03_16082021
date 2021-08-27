@@ -44,7 +44,8 @@
         align-items: center;
         counter-increment: steps-style;
         height:80px;
-        width:325px;
+        width:100%;
+        max-width:325px;
         border-radius: 25px;
         background-color: $bgcolor2;
         box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
@@ -126,8 +127,6 @@
     padding:5% 5%;
     background-color:$bgcolor2;
     box-sizing: border-box;
-
-    
 }
 
 .thumbnails{
@@ -148,8 +147,6 @@
 
     .thumbnails{
     @include grid(2, 45%, 2, 255px, 50px, 5%);
-    
-    
     }
 }
 

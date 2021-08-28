@@ -260,6 +260,7 @@ a {
   margin-bottom: 200px;
   border-radius: 20px;
   overflow: hidden;
+  position: relative;
 }
 .thumbnail * {
   margin: 0;
@@ -277,7 +278,50 @@ a {
   width: 90%;
 }
 .thumbnail__new {
-  display: none;
+  position: absolute;
+  padding: 0.5rem;
+  z-index: 2;
+  background-color: #99e2d0;
+  color: #008766;
+  display: block;
+  top: 1rem;
+  right: 1rem;
+  font-weight: bold;
+  border-radius: 0.2rem;
+}
+.thumbnail__btn {
+  position: relative;
+  height: 2rem;
+  width: 2rem;
+  background-color: black;
+  border: transparent 0px solid;
+  cursor: pointer;
+}
+.thumbnail__btn::before {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background: linear-gradient(0deg, #9356dc 0%, #9356dc 0%, #ff79da 100%);
+  opacity: 0;
+  transition: 0.3s;
+}
+.thumbnail__btn:hover::before {
+  opacity: 1;
+}
+.thumbnail__btn-like {
+  position: absolute;
+  font-size: 2rem;
+  top: 0;
+  left: 0;
+  background-color: white;
+  mix-blend-mode: screen;
+  transition-duration: 0.3s;
+}
+.thumbnail__btn:hover .thumbnail__btn-like--empty {
+  opacity: 0;
 }
 
 .header--back {

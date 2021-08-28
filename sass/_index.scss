@@ -173,6 +173,7 @@
     margin-bottom:200px;
     border-radius: 20px;
     overflow: hidden;
+    position:relative;
     
 
     & *{
@@ -194,8 +195,61 @@
     }
 
     &__new{
-        display:none;
+        position:absolute;
+        padding:0.5rem;
+        z-index:2;
+        background-color:$bgcolor-validate;
+        color: $fontcolor--new;
+        display:block;
+        top:1rem;
+        right:1rem;
+        font-weight: bold;
+        border-radius: 0.2rem;
     }
+
+    &__btn{
+        position:relative;
+        height: 2rem;
+        width: 2rem;
+        background-color: black;
+        border: transparent 0px solid;
+        cursor:pointer;
+
+        &::before{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            background:$gradient;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        &:hover::before{
+            opacity:1;
+        }
+
+        &-like{
+            position:absolute;
+            font-size:2rem;
+            top:0;
+            left:0;
+            background-color:white;
+            mix-blend-mode: screen;
+            transition-duration: .3s;
+        }   
+    }
+
+    &__btn:hover{
+        
+        .thumbnail__btn-like--empty{
+            opacity:0;
+        }
+
+    }
+    
 
 
     

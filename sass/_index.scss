@@ -1,13 +1,75 @@
 @use 'values' as *;
 
+
+.loader{
+    display:flex;
+    @include centering;
+    position:fixed;
+    height:100%;
+    width:100%;
+    left:0;
+    top:0;
+    background-color: white;
+    z-index:10;
+    animation:loading 1.5s;
+    animation-delay:1.5s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    opacity:0;
+
+    &__logo{
+        position:absolute;
+        @include centering;
+        font-family:Shrikhand ;
+        font-size:2rem;
+    }
+}
+
+
+
+.spinner {
+  animation: rotator $duration linear infinite;
+  width:40%;
+  height:40%;
+  
+}
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation:
+    dash $duration ease-in-out infinite, 
+    colors ($duration*4) ease-in-out infinite;
+}
+
+
+
+
 .geolocal{
     @include flex-row;
     height:50px;
     @include bg-color($bgcolor-geolocal);
     @include centering;
+    justify-content: center;
 
     &__icon{
         margin-right:10px;
+    }
+
+    &__form{
+        display:flex;
+        justify-content:space-evenly;
+    }
+
+    &__input{
+        background-color: $bgcolor-geolocal;
+        border: none;
+        font-weight: bold;
+
+        &:active{
+            border:none;
+        }
     }
 
 }
@@ -18,12 +80,12 @@
     @include centering;
     box-sizing: border-box;
     width:100%;
-    padding:0 10% 5% 10%;
+    padding-bottom:2rem;
 
 }
 
 .how-to{
-    padding:0 5%;
+    padding:0 2rem;
 
 
     &__steps{
@@ -36,7 +98,7 @@
 
     &__steps{
         margin-left:0;
-        padding:0 5%;
+        padding:0 2rem;
     }
 
     &__step{
@@ -44,7 +106,8 @@
         align-items: center;
         counter-increment: steps-style;
         height:80px;
-        width:325px;
+        width:100%;
+        max-width:325px;
         border-radius: 25px;
         background-color: $bgcolor2;
         box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
@@ -58,12 +121,12 @@
         background:$bgcolor4;
         @include centering;
         color:white;
-        width:2rem;
+        width:2.2rem;
         height:2rem;
-        border-radius:2rem;
-        text-align:center;
+        border-radius:50%;
         line-height:2rem;
-        margin-right:5%;
+        margin-right:1.5rem;
+        margin-left:-1rem;
     }
 
     &__step:last-child{
@@ -88,12 +151,13 @@
 
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1250px) {
 
     .how-to{
-        padding:0;
-        width:1100px;
+        padding:0rem;
+        width:1200px;
         margin:0 auto;
+        box-sizing: border-box;
     
         &__steps{
         @include flex-row;
@@ -115,6 +179,17 @@
 
 }
 
+@media (min-width: 1100px) {
+    .how-to{
+    
+        &__steps{
+        @include flex-row;
+        justify-content: space-evenly;
+        padding:0;
+        }
+    }
+}
+
 %steps-text{
     margin-right:5%;
     font-size: 1.2rem;
@@ -123,11 +198,9 @@
 
 .restaurants{
     width:100%;
-    padding:5% 5%;
+    padding:1rem;
     background-color:$bgcolor2;
     box-sizing: border-box;
-
-    
 }
 
 .thumbnails{
@@ -136,20 +209,20 @@
     @include grid(1, 100%, 4, 255px, 20px, 0);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1250px) {
     .restaurants {
-        padding:50px 0;
+        padding:1rem 0 3rem 0;
+        
     & .container{
-        width: 1100px;
-        padding:0 50px;
+        width: 1200px;
+        box-sizing: border-box;
+        padding:0;
         margin:0 auto;
     }
 }
 
     .thumbnails{
-    @include grid(2, 45%, 2, 255px, 50px, 5%);
-    
-    
+    @include grid(2, 47.5%, 2, 255px, 50px, 5%);
     }
 }
 
@@ -162,6 +235,7 @@
     margin-bottom:200px;
     border-radius: 20px;
     overflow: hidden;
+    position:relative;
     
 
     & *{
@@ -183,9 +257,60 @@
     }
 
     &__new{
-        display:none;
+        position:absolute;
+        padding:0.5rem;
+        z-index:2;
+        background-color:$bgcolor-validate;
+        color: $fontcolor--new;
+        display:block;
+        top:1rem;
+        right:1rem;
+        font-weight: bold;
+        border-radius: 0.2rem;
     }
 
+    &__btn{
+        position:relative;
+        height: 2rem;
+        width: 2rem;
+        background-color: black;
+        cursor:pointer;
 
+        &::before{
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            background:$gradient;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        &:hover::before{
+            opacity:1;
+        }
+
+        &-like{
+            width:100%;
+            height:100%;
+            position:absolute;
+            font-size:2rem;
+            top:0;
+            left:0;
+            background-color:white;
+            mix-blend-mode: screen;
+            transition-duration: .3s;
+        }   
+    }
+
+    &__btn:hover{
+        
+        .thumbnail__btn-like--empty{
+            opacity:0;
+        }
+
+    }
     
 }

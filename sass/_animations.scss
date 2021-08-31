@@ -1,0 +1,58 @@
+@use 'values' as *;
+
+@keyframes menu_appear {
+    0%{
+        opacity:0;
+        margin-top:4rem;
+    }
+
+    75%{
+        margin-top:0rem;
+    }
+
+    100%{
+        opacity:1;
+        
+    }
+    
+}
+
+
+@keyframes loading{
+    0%{
+        opacity:1;
+    }
+
+    90%{
+        opacity:0;
+        z-index:10;
+    }
+
+    100%{
+        z-index:-10;
+    }
+}
+
+
+@keyframes rotator {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(270deg); }
+  }
+
+  @keyframes colors {
+	0% { stroke: $color-primary; }
+	50% { stroke: $color-seconday; }
+    100% { stroke: $color-tertiary; }
+}
+
+@keyframes dash {
+    0% { stroke-dashoffset: $offset; }
+    50% {
+      stroke-dashoffset: $offset/4;
+      transform:rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: $offset;
+      transform:rotate(450deg);
+    }
+   }

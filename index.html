@@ -14,14 +14,24 @@
 
 <body>
 
+  <!--  <div class="loader">
+      <svg class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+     </svg>
+     <h1 class="loader__logo">ohmyfood</h1>
+
+    </div>-->
+
   <header class="header">
     <a class="header__logo" href="index.html">ohmyfood</a>
   </header>
 
   <div class="main">
     <div class="geolocal">
+      <form class="geolocal__form">
       <i class="fas fa-map-marker-alt geolocal__icon"></i>
-      <span class="geolocal__text">Paris, Belleville</span>
+      <input class="geolocal__input" value="Paris, Belleville" />
+    </form>
     </div>
 
     <div class="heading">
@@ -65,6 +75,7 @@
         <h2 class="restaurants__title">Restaurants</h2>
         
         <div class="thumbnails">
+          
           <a class="thumbnail" href="la-palette-du-gout.html">
             <img src="./img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="" class="thumbnail__img">
             <span class="thumbnail__new">Nouveau</span>
@@ -74,7 +85,8 @@
                 <p class="thumbnail__subtitle">Ménilmontant</p>
               </div>
               <div class="menu__btn thumbnail__btn">
-                <i class="thumbnail__like far fa-heart fa-2x"></i>
+                <i class="thumbnail__btn-like thumbnail__btn-like--empty far fal fa-heart fa-2x"></i>
+                <i class="thumbnail__btn-like thumbnail__btn-like--full fas fa-heart fa-2x"></i>
               </div>
             </div>
           </a>
@@ -87,8 +99,11 @@
                 <h3 class="thumbnail__title">La note enchantée</h3>
                 <p class="thumbnail__subtitle">Charonne</p>
               </div>
+              
               <div class="menu__btn thumbnail__btn">
-                <i class="thumbnail__like far fa-heart fa-2x"></i>
+                
+                <i class="thumbnail__btn-like thumbnail__btn-like--empty far fal fa-heart fa-2x"></i>
+                <i class="thumbnail__btn-like thumbnail__btn-like--full fas fa-heart fa-2x"></i>
               </div>
             </div>
           </a>
@@ -101,7 +116,8 @@
                 <p class="thumbnail__subtitle">Cité Rouge</p>
               </div>
               <div class="menu__btn thumbnail__btn">
-                <i class="thumbnail__like far fa-heart fa-2x"></i>
+                <i class="thumbnail__btn-like thumbnail__btn-like--empty far fal fa-heart fa-2x"></i>
+                <i class="thumbnail__btn-like thumbnail__btn-like--full fas fa-heart fa-2x"></i>
               </div>
             </div>
           </a>
@@ -114,7 +130,8 @@
                 <p class="thumbnail__subtitle">Folie-Méricourt</p>
               </div>
               <div class="menu__btn thumbnail__btn">
-                <i class="thumbnail__like far fa-heart fa-2x"></i>
+                <i class="thumbnail__btn-like thumbnail__btn-like--empty far fal fa-heart fa-2x"></i>
+                <i class="thumbnail__btn-like thumbnail__btn-like--full fas fa-heart fa-2x"></i>
               </div>
             </div>
           </a>
@@ -130,10 +147,10 @@
 
       <ul class="footer__list">
         <li class="footer__list-item">
-          <a class="footer__link" href="#"><i class="footer__icon fas fa-utensils"></i>Proposer un restaurant</a>
+          <a class="footer__link" href="#"><i class="footer__icon fas fa-utensils fa-fw"></i>Proposer un restaurant</a>
         </li>
         <li class="footer__list-item">
-          <a class="footer__link" href="#"><i class="footer__icon fas fa-hands-helping"></i>Devenir partenaire</a>
+          <a class="footer__link" href="#"><i class="footer__icon fas fa-hands-helping fa-fw"></i>Devenir partenaire</a>
         </li>
         <li class="footer__list-item">
           <a class="footer__link" href="#">Mentions légales</a>

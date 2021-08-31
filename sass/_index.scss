@@ -1,13 +1,75 @@
 @use 'values' as *;
 
+
+.loader{
+    display:flex;
+    @include centering;
+    position:fixed;
+    height:100%;
+    width:100%;
+    left:0;
+    top:0;
+    background-color: white;
+    z-index:10;
+    animation:loading 1.5s;
+    animation-delay:1.5s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    opacity:0;
+
+    &__logo{
+        position:absolute;
+        @include centering;
+        font-family:Shrikhand ;
+        font-size:2rem;
+    }
+}
+
+
+
+.spinner {
+  animation: rotator $duration linear infinite;
+  width:40%;
+  height:40%;
+  
+}
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation:
+    dash $duration ease-in-out infinite, 
+    colors ($duration*4) ease-in-out infinite;
+}
+
+
+
+
 .geolocal{
     @include flex-row;
     height:50px;
     @include bg-color($bgcolor-geolocal);
     @include centering;
+    justify-content: center;
 
     &__icon{
         margin-right:10px;
+    }
+
+    &__form{
+        display:flex;
+        justify-content:space-evenly;
+    }
+
+    &__input{
+        background-color: $bgcolor-geolocal;
+        border: none;
+        font-weight: bold;
+
+        &:active{
+            border:none;
+        }
     }
 
 }
@@ -136,7 +198,7 @@
 
 .restaurants{
     width:100%;
-    padding:2rem;
+    padding:1rem;
     background-color:$bgcolor2;
     box-sizing: border-box;
 }
@@ -149,7 +211,7 @@
 
 @media (min-width: 1250px) {
     .restaurants {
-        padding:1rem 0;
+        padding:1rem 0 3rem 0;
         
     & .container{
         width: 1200px;
@@ -212,7 +274,6 @@
         height: 2rem;
         width: 2rem;
         background-color: black;
-        border: transparent 0px solid;
         cursor:pointer;
 
         &::before{
@@ -232,6 +293,8 @@
         }
 
         &-like{
+            width:100%;
+            height:100%;
             position:absolute;
             font-size:2rem;
             top:0;
@@ -249,8 +312,5 @@
         }
 
     }
-    
-
-
     
 }

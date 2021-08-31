@@ -1,3 +1,59 @@
+@keyframes menu_appear {
+  0% {
+    opacity: 0;
+    margin-top: 4rem;
+  }
+  75% {
+    margin-top: 0rem;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+    z-index: 10;
+  }
+  100% {
+    z-index: -10;
+  }
+}
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+@keyframes colors {
+  0% {
+    stroke: #9356dc;
+  }
+  50% {
+    stroke: #FF79DA;
+  }
+  100% {
+    stroke: #99E2D0;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 260;
+  }
+  50% {
+    stroke-dashoffset: 65;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 260;
+    transform: rotate(450deg);
+  }
+}
 body, html {
   margin: 0;
   padding: 0;
@@ -96,9 +152,49 @@ a {
     width: 1200px;
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 0rem 2rem;
+    padding: 0;
   }
 }
+.loader {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+  animation: loading 1.5s;
+  animation-delay: 1.5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  opacity: 0;
+}
+.loader__logo {
+  position: absolute;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-family: Shrikhand;
+  font-size: 2rem;
+}
+
+.spinner {
+  animation: rotator 3s linear infinite;
+  width: 40%;
+  height: 40%;
+}
+
+.path {
+  stroke-dasharray: 260;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash 3s ease-in-out infinite, colors 12s ease-in-out infinite;
+}
+
 .geolocal {
   display: flex;
   flex-direction: row;
@@ -107,9 +203,22 @@ a {
   justify-content: center;
   text-align: center;
   align-items: center;
+  justify-content: center;
 }
 .geolocal__icon {
   margin-right: 10px;
+}
+.geolocal__form {
+  display: flex;
+  justify-content: space-evenly;
+}
+.geolocal__input {
+  background-color: #eaeaea;
+  border: none;
+  font-weight: bold;
+}
+.geolocal__input:active {
+  border: none;
 }
 
 .heading {
@@ -216,7 +325,7 @@ a {
 
 .restaurants {
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
   background-color: #f6f6f6;
   box-sizing: border-box;
 }
@@ -233,7 +342,7 @@ a {
 
 @media (min-width: 1250px) {
   .restaurants {
-    padding: 1rem 0;
+    padding: 1rem 0 3rem 0;
   }
   .restaurants .container {
     width: 1200px;
@@ -294,7 +403,6 @@ a {
   height: 2rem;
   width: 2rem;
   background-color: black;
-  border: transparent 0px solid;
   cursor: pointer;
 }
 .thumbnail__btn::before {
@@ -312,6 +420,8 @@ a {
   opacity: 1;
 }
 .thumbnail__btn-like {
+  width: 100%;
+  height: 100%;
   position: absolute;
   font-size: 2rem;
   top: 0;
@@ -367,6 +477,7 @@ a {
 .menu-section {
   width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
 }
 .menu-section__title {
   font-weight: lighter;
@@ -384,16 +495,19 @@ a {
   bottom: 0;
 }
 .menu-item {
+  display: flex;
   background-color: white;
   padding: 1rem;
-  display: flex;
   border-radius: 0.75rem;
   margin: 1rem 0;
-  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.2);
   overflow: hidden;
   cursor: pointer;
   max-width: 100%;
   box-sizing: border-box;
+  animation: menu_appear 1.5s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.1, 0.5, 0.75, 1);
 }
 .menu-item:hover {
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.4);
@@ -402,7 +516,7 @@ a {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  flex: 1;
+  flex-grow: 1;
 }
 .menu-item__title, .menu-item__subtitle {
   margin: 0;
@@ -415,7 +529,6 @@ a {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding-left: 0.5rem;
 }
 .menu-item__confirm {
   width: 4rem;
@@ -439,14 +552,16 @@ a {
   justify-content: center;
   text-align: center;
   align-items: center;
-  transform: rotate(180deg);
-  transition-duration: 0.5s;
+  transform: rotate(360deg);
+  transition-duration: 0.75s;
 }
 .menu-item:hover .menu-item__checkmark {
   transform: rotate(0);
 }
 .menu-item__icon {
   color: #99e2d0;
+  height: 100%;
+  width: 100%;
 }
 
 @media (min-width: 1200px) {
@@ -508,4 +623,52 @@ a {
 }
 .command__btn:hover::after {
   opacity: 0.2;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+.delay-4 {
+  animation-delay: 0.8s;
+}
+
+.delay-5 {
+  animation-delay: 1s;
+}
+
+.delay-6 {
+  animation-delay: 1.2s;
+}
+
+.delay-7 {
+  animation-delay: 1.4s;
+}
+
+.delay-8 {
+  animation-delay: 1.6s;
+}
+
+.delay-9 {
+  animation-delay: 1.8s;
+}
+
+.delay-10 {
+  animation-delay: 2s;
+}
+
+.section-items_number--3 {
+  height: 330px;
+}
+
+.section-items_number--4 {
+  height: 420px;
 }

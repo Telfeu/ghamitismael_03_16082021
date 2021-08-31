@@ -14,14 +14,24 @@
 
 <body>
 
+  <!--  <div class="loader">
+      <svg class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+     </svg>
+     <h1 class="loader__logo">ohmyfood</h1>
+
+    </div>-->
+
   <header class="header">
     <a class="header__logo" href="index.html">ohmyfood</a>
   </header>
 
   <div class="main">
     <div class="geolocal">
+      <form class="geolocal__form">
       <i class="fas fa-map-marker-alt geolocal__icon"></i>
-      <span class="geolocal__text">Paris, Belleville</span>
+      <input class="geolocal__input" value="Paris, Belleville" />
+    </form>
     </div>
 
     <div class="heading">
@@ -65,6 +75,7 @@
         <h2 class="restaurants__title">Restaurants</h2>
         
         <div class="thumbnails">
+          
           <a class="thumbnail" href="la-palette-du-gout.html">
             <img src="./img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="" class="thumbnail__img">
             <span class="thumbnail__new">Nouveau</span>

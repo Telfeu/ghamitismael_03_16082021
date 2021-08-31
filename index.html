@@ -7,20 +7,24 @@
       <title>OhMyFood</title>
       <link rel="icon" href="favicon.png" />
       <link rel="stylesheet" href="style.css" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shrikhand|Roboto"/>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
       <script src="https://kit.fontawesome.com/67aac6e877.js" crossorigin="anonymous"></script>
   </head>
 
 
 <body>
 
-  <!--  <div class="loader">
+    <div class="loader">
       <svg class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+        <circle class="path path--1" cx="33" cy="33" r="30"></circle>
+        <circle class="path path--2" cx="33" cy="33" r="40"></circle>
      </svg>
      <h1 class="loader__logo">ohmyfood</h1>
 
-    </div>-->
+    </div>
 
   <header class="header">
     <a class="header__logo" href="index.html">ohmyfood</a>
@@ -76,28 +80,32 @@
         
         <div class="thumbnails">
           
-          <a class="thumbnail" href="la-palette-du-gout.html">
-            <img src="./img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="" class="thumbnail__img">
+          <div class="thumbnail" href="la-palette-du-gout.html">
+            <a href="la-palette-du-gout.html" class="thumbnail__img--link"><img src="./img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="" class="thumbnail__img"></a>
             <span class="thumbnail__new">Nouveau</span>
             <div class="thumbnail__footer">
               <div class="thumbnail__content">
+                <a href="la-palette-du-gout.html">
                 <h3 class="thumbnail__title">La palette du goût</h3>
                 <p class="thumbnail__subtitle">Ménilmontant</p>
+                </a>
               </div>
               <div class="menu__btn thumbnail__btn">
                 <i class="thumbnail__btn-like thumbnail__btn-like--empty far fal fa-heart fa-2x"></i>
                 <i class="thumbnail__btn-like thumbnail__btn-like--full fas fa-heart fa-2x"></i>
               </div>
             </div>
-          </a>
+          </div>
     
-          <a class="thumbnail" href="la-note-enchantee.html">
-            <img src="./img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="" class="thumbnail__img">
+          <div class="thumbnail" href="la-note-enchantee.html">
+            <a href="la-note-enchantee.html" class="thumbnail__img--link"><img src="./img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="" class="thumbnail__img"></a>
             <span class="thumbnail__new">Nouveau</span>
             <div class="thumbnail__footer">
               <div class="thumbnail__content">
+                <a href="la-note-enchantee.html">
                 <h3 class="thumbnail__title">La note enchantée</h3>
                 <p class="thumbnail__subtitle">Charonne</p>
+                </a>
               </div>
               
               <div class="menu__btn thumbnail__btn">
@@ -106,35 +114,39 @@
                 <i class="thumbnail__btn-like thumbnail__btn-like--full fas fa-heart fa-2x"></i>
               </div>
             </div>
-          </a>
+          </div>
     
-          <a class="thumbnail" href="a-la-francaise.html">
-            <img src="./img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="" class="thumbnail__img">
+          <div class="thumbnail" href="a-la-francaise.html">
+            <a href="a-la-francaise.html" class="thumbnail__img--link"><img src="./img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="" class="thumbnail__img"></a>
             <div class="thumbnail__footer">
               <div class="thumbnail__content">
+                <a href="a-la-francaise.html">
                 <h3 class="thumbnail__title">À la française</h3>
                 <p class="thumbnail__subtitle">Cité Rouge</p>
+                </a>
               </div>
               <div class="menu__btn thumbnail__btn">
                 <i class="thumbnail__btn-like thumbnail__btn-like--empty far fal fa-heart fa-2x"></i>
                 <i class="thumbnail__btn-like thumbnail__btn-like--full fas fa-heart fa-2x"></i>
               </div>
             </div>
-          </a>
+          </div>
     
-          <a class="thumbnail" href="delice-des-sens.html">
-            <img src="./img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="" class="thumbnail__img">
+          <div class="thumbnail">
+            <a href="delice-des-sens.html" class="thumbnail__img--link"><img src="./img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="" class="thumbnail__img"></a>
             <div class="thumbnail__footer">
               <div class="thumbnail__content">
+                <a href="delice-des-sens.html">
                 <h3 class="thumbnail__title">Le délice des sens</h3>
                 <p class="thumbnail__subtitle">Folie-Méricourt</p>
+              </a>
               </div>
               <div class="menu__btn thumbnail__btn">
                 <i class="thumbnail__btn-like thumbnail__btn-like--empty far fal fa-heart fa-2x"></i>
                 <i class="thumbnail__btn-like thumbnail__btn-like--full fas fa-heart fa-2x"></i>
               </div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>

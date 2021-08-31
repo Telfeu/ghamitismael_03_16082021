@@ -22,15 +22,14 @@ a{
 
 .header{
     @include bg-color;
+    display:flex;
+    @include centering;
     height:70px;
-    text-align: center;
-    padding-top: 15px;
+
     
 
     &__logo{
         font-family: Shrikhand;
-        height:40px;
-        width:180px;
         font-size:2rem;
         
         

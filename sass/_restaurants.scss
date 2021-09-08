@@ -29,6 +29,7 @@
     padding:1rem;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+    overflow: visible;
 
     &__header{
         font-family:Shrikhand;
@@ -76,11 +77,11 @@
         background-color: white;
         padding: 1rem;
         border-radius: 0.75rem;
-        margin: 1rem 0;
+        margin: 1rem auto;
         box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.2);
         overflow: hidden;
         cursor: pointer;
-        max-width: 100%;
+        max-width: 95%;
         box-sizing: border-box;
         animation:menu_appear 1.5s;
         animation-fill-mode:both;
@@ -101,6 +102,7 @@
             text-overflow: ellipsis;
             overflow: hidden;
             flex-grow:1;
+
         }
 
         &__title, &__subtitle {
@@ -117,6 +119,7 @@
             display: flex;
             justify-content: flex-end;
             align-items: flex-end;
+            
         }
 
         
@@ -124,6 +127,7 @@
             width: 4rem;
             display:flex;
             align-items:center;
+            flex-shrink: 0;
             justify-content:center;
             background-color:$bgcolor-validate;
             margin: -1rem -5rem -1rem 1rem;
@@ -174,7 +178,7 @@
 
         &-section{
             width:33%;
-            padding:0 1%;
+            padding:0;
         }
     }
 }
